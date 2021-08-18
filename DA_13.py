@@ -1,3 +1,4 @@
+# ITE College West Python elective Project Scenario 2, group 13.
 import scrapy
 class NewSpider(scrapy.Spider):
     name = "new_spider"
@@ -9,4 +10,3 @@ class NewSpider(scrapy.Spider):
             yield {
                 'Image Link': x.xpath(newsel).extract_first(),
             }
-
