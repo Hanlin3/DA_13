@@ -16,4 +16,3 @@ class NewSpider(scrapy.Spider):
             yield {
                 'Image Link': x.xpath(newsel).extract_first(),
             }
-q
