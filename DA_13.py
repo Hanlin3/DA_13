@@ -3,8 +3,7 @@
 # - Go into edit configurations. Inside of it, click on "Script Path", change to "Module Name".
 # - Module Name: scrapy.cmdline
 # - Parameters: runspider DA_13.py
-# Notes:: After you done modifications, under "changes" click tick box
-# and then click the green arrow pointing to the upper right. Then press push. Thanks!
+# Notes:: After you done modifications, under "changes" click tick box then press the commit and push... Thanks!
 
 import scrapy
 class NewSpider(scrapy.Spider):
