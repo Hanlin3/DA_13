@@ -7,6 +7,7 @@
 # Under "Commit to master", tick the "Changes" box and then click "Commit and Push...".
 
 import scrapy
+
 class BrickSetSpider(scrapy.Spider):
     name = 'brick_spider'
     start_urls = ['http://brickset.com/sets/year-2016']
