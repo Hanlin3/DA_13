@@ -2,7 +2,7 @@
 # Note: To get PyCharm to run this scrapy script:
 # - Go into edit configurations. Inside of it, click on "Script Path", change it to "Module name".
 # - Module name: scrapy.cmdline
-# - Parameters: runspider DA_13.py
+# - Parameters: runspider DA_13.py -s USER_AGENT="DigitalOcean Tutorial"
 # Note: After you've made modifications, click on Git > Commit...
 # Under "Commit to master", tick the "Changes" box and then click "Commit and Push...".
 
