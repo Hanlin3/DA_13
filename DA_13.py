@@ -6,9 +6,6 @@
 # Note: After you've made modifications, under "Commit to master", tick the "Changes" box and then click "Commit and Push...".
 
 import scrapy
-#I am testing a second commit
-#I'm testing a third commit
-
 class BrickSetSpider(scrapy.Spider):
     name = 'brick_spider'
     start_urls = ['http://brickset.com/sets/year-2016']
