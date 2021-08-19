@@ -1,4 +1,4 @@
-# ITE College West Python elective project. [Scenario 2 group 13].
+# ITE College West Python elective project. [Scenario 2 group 13]
 # Note: To get PyCharm to run this scrapy script:
 # - Go into edit configurations. Inside of it, click on "Script Path", change it to "Module name".
 # - Module name: scrapy.cmdline
