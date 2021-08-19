@@ -3,7 +3,8 @@
 # - Go into edit configurations. Inside of it, click on "Script Path", change it to "Module name".
 # - Module name: scrapy.cmdline
 # - Parameters: runspider DA_13.py
-# Note: After you've made modifications, under "Commit to master", tick the "Changes" box and then click "Commit and Push...".
+# Note: After you've made modifications, click on Git > Commit...
+# Under "Commit to master", tick the "Changes" box and then click "Commit and Push...".
 
 import scrapy
 class BrickSetSpider(scrapy.Spider):
