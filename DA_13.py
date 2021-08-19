@@ -1,9 +1,9 @@
 # ITE College West Python elective Project Scenario 2, group 13.
-# Important!! To get PyCharm to run this thing I had to do this, otherwise exit status 0 after click on play button!!:
-# - Go into edit configurations. Inside of it, click on "Script Path", change to "Module Name".
-# - Module Name: scrapy.cmdline
+# Note: To get PyCharm to run this scrapy script:
+# - Go into edit configurations. Inside of it, click on "Script Path", change it to "Module name".
+# - Module name: scrapy.cmdline
 # - Parameters: runspider DA_13.py
-# Notes:: After you done modifications, under "changes" click tick box then press the commit and push... Thanks!
+# Note: After you've made modifications, under "Commit to master", tick the "Changes" box and then click "Commit and Push...".
 
 import scrapy
 class NewSpider(scrapy.Spider):
