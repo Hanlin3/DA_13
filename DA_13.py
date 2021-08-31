@@ -8,9 +8,43 @@
 
 import scrapy
 
+##changing parts***********************************************************
+
+# url for group13
+url = "https://brickset.com/sets/year-2010"
+r = requests.get(url)
+print(r.text)
+
+
+# Display an OK return status (task5.ii
+print("Status code:")
+print("\t*",r.status_code)
+
+
+# Display the Website Hearder (task5.iii
+h = requests.head(url)
+print("Header:")
+print("**********")
+for x in h.headers:
+    print("\t",x,".",h.headers[x])
+print("**********")
+
+
+# Modify the Header user-agent to display "Mobile" (task5.iv
+headers = {
+    'User-Agent' : 'Mobile'
+}
+r2 = requests.get(url,headers=headers)
+print(r2.request.headers)
+
+##changing parts***********************************************************
+
+
+
+
 class BrickSetSpider(scrapy.Spider):
     name = 'brick_spider'
-    start_urls = ['http://brickset.com/sets/year-2016']
+    start_urls = ['https://brickset.com/sets/year-2010']
 
     def parse(self, response):
         SET_SELECTOR = '.set'
