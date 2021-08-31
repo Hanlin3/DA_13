@@ -1,3 +1,4 @@
+#+-----------------------------------------------------------------------------------------------------------------------------+
 # ITE College West Python elective project. [Scenario 2 group 13]
 # Note: To get PyCharm to run this scrapy script:
 # - In pycharm venv terminal, pip install scrapy
@@ -8,31 +9,29 @@
 # Note: After you've made modifications, click on Git > Commit...
 # Under "Commit to master", tick the "Changes" box and then click "Commit and Push...".
 # To output as JSON file, paste this in venv terminal: scrapy runspider DA_13.py -s USER_AGENT="Anything" -o test.json -t json
+#+-----------------------------------------------------------------------------------------------------------------------------+
 
 import scrapy
 import requests
 
 ##changing parts***********************************************************
 
-# url for group13
+# Define url for group13
 url = "https://brickset.com/sets/year-2010"
 r = requests.get(url)
 print(r.text)
 
-
-# Display an OK return status (task5.ii
+# Display an OK return status (task5.ii)
 print("Status code:")
 print("\t*",r.status_code)
 
-
-# Display the Website Hearder (task5.iii
+# Display the Website Header (task5.iii)
 h = requests.head(url)
 print("Header:")
 print("**********")
 for x in h.headers:
     print("\t",x,".",h.headers[x])
 print("**********")
-
 
 # Modify the Header user-agent to display "Mobile" (task5.iv
 headers = {
@@ -42,9 +41,6 @@ r2 = requests.get(url,headers=headers)
 print(r2.request.headers)
 
 ##changing parts***********************************************************
-
-
-
 
 class BrickSetSpider(scrapy.Spider):
     name = 'brick_spider'
