@@ -1,5 +1,7 @@
 # ITE College West Python elective project. [Scenario 2 group 13]
 # Note: To get PyCharm to run this scrapy script:
+# - In pycharm venv terminal, pip install scrapy
+# - In pycharm venv terminal, pip install requests
 # - Go into edit configurations. Inside of it, click on "Script Path", change it to "Module name".
 # - Module name: scrapy.cmdline
 # - Parameters: runspider DA_13.py -s USER_AGENT="Anything"
