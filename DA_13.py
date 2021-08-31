@@ -7,6 +7,7 @@
 # - Parameters: runspider DA_13.py -s USER_AGENT="Anything"
 # Note: After you've made modifications, click on Git > Commit...
 # Under "Commit to master", tick the "Changes" box and then click "Commit and Push...".
+# To output as JSON file, paste this in venv terminal: scrapy runspider DA_13.py -s USER_AGENT="Anything" -o test.json -t json
 
 import scrapy
 import requests
