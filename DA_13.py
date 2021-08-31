@@ -7,6 +7,7 @@
 # Under "Commit to master", tick the "Changes" box and then click "Commit and Push...".
 
 import scrapy
+import requests
 
 ##changing parts***********************************************************
 
