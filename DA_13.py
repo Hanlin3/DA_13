@@ -33,7 +33,7 @@ for x in h.headers:
     print("\t",x,".",h.headers[x])
 print("**********")
 
-# Modify the Header user-agent to display "Mobile" (task5.iv
+# Modify the Header user-agent to display "Mobile" (task5.iv)
 headers = {
     'User-Agent' : 'Mobile'
 }
