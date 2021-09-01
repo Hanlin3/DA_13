@@ -12,6 +12,7 @@ import unittest
 
 class TASK5():
     def task5_1(self):
+        # Request the get
         url = "https://brickset.com/sets/year-2010"
         r = requests.get(url)
         #print(r.text)
@@ -38,6 +39,8 @@ class TASK5():
         r2 = requests.get(url,headers=headers)
         print(r2.request.headers)
 
+
+# Our scrapy code from https://www.digitalocean.com/community/tutorials/how-to-crawl-a-web-page-with-scrapy-and-python-3
 class BrickSetSpider(scrapy.Spider):
     name = 'brick_spider'
     start_urls = ['https://brickset.com/sets/year-2010']
@@ -65,6 +68,7 @@ class BrickSetSpider(scrapy.Spider):
                 callback=self.parse
             )
 
+# Task 8 : a Test Case with appropriate Test function(s) to test your application.
 class TestResult(unittest.TestCase):
     
     def test_status(self):
