@@ -8,7 +8,10 @@
 
 import scrapy
 import requests
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
 import unittest
+
 
 class TASK5():
     def task5_1(self):
@@ -69,12 +72,17 @@ class BrickSetSpider(scrapy.Spider):
             )
 
 # Task 8 : a Test Case with appropriate Test function(s) to test your application.
-class TestResult(unittest.TestCase):
-    
-    def test_status(self):
-        url = 'https://brickset.com/sets/year-2010'
-        response = requests.get(url=url)
-        self.assertEqual(response.status_code, 200)
+class Test(unittest.TestCase):
+   bs=None
+   def setUpClass():
+      url="https://brickset.com/sets/year-2010"
+      Test.bs=BeautifulSoup(urlopen(url), 'html.parser')
+   def test_titleText(self):
+      pageTitle=Test.bs.find('h1').get_text()
+      self.assertEqual('Brickset', pageTitle); # ensure that the pagetitle have "Brickset"
+   def test_contentExists(self):
+      content=Test.bs.find('div',{'class':'content'}) # ensure the website have the correct div
+      self.assertIsNotNone(content)
 
 if __name__ == '__main__':
     unittest.main()
