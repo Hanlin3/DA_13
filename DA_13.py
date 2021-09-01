@@ -1,46 +1,42 @@
-#+-----------------------------------------------------------------------------------------------------------------------------+
 # ITE College West Python elective project. [Scenario 2 group 13]
 # Note: To get PyCharm to run this scrapy script:
-# - In pycharm venv terminal, pip install scrapy
-# - In pycharm venv terminal, pip install requests
 # - Go into edit configurations. Inside of it, click on "Script Path", change it to "Module name".
 # - Module name: scrapy.cmdline
-# - Parameters: runspider DA_13.py -s USER_AGENT="Anything"
+# - Parameters: runspider DA_13.py -s USER_AGENT="DigitalOcean Tutorial"
 # Note: After you've made modifications, click on Git > Commit...
 # Under "Commit to master", tick the "Changes" box and then click "Commit and Push...".
-# To output as JSON file, paste this in venv terminal: scrapy runspider DA_13.py -s USER_AGENT="Anything" -o test.json -t json
-#+-----------------------------------------------------------------------------------------------------------------------------+
 
 import scrapy
 import requests
+import unittest
 
-##changing parts***********************************************************
-
-# Define url for group13
-url = "https://brickset.com/sets/year-2010"
-r = requests.get(url)
-print(r.text)
-
-# Display an OK return status (task5.ii)
-print("Status code:")
-print("\t*",r.status_code)
-
-# Display the Website Header (task5.iii)
-h = requests.head(url)
-print("Header:")
-print("**********")
-for x in h.headers:
-    print("\t",x,".",h.headers[x])
-print("**********")
-
-# Modify the Header user-agent to display "Mobile" (task5.iv)
-headers = {
-    'User-Agent' : 'Mobile'
-}
-r2 = requests.get(url,headers=headers)
-print(r2.request.headers)
-
-##changing parts***********************************************************
+class TASK5():
+    def task5_1(self):
+        url = "https://brickset.com/sets/year-2010"
+        r = requests.get(url)
+        #print(r.text)
+    
+    def task5_2(self):
+        # Display an OK return status (task5.ii
+        print("Status code:")
+        print("\t*",r.status_code)
+        
+    def task5_3(self):
+        # Display the Website Hearder (task5.iii
+        h = requests.head(url)
+        print("Header:")
+        print("**********")
+        for x in h.headers:
+            print("\t",x,".",h.headers[x])
+        print("**********")
+    
+    def task5_4(self):
+        # Modify the Header user-agent to display "Mobile" (task5.iv
+        headers = {
+            'User-Agent' : 'Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B334b Safari/531.21.10'
+        }
+        r2 = requests.get(url,headers=headers)
+        print(r2.request.headers)
 
 class BrickSetSpider(scrapy.Spider):
     name = 'brick_spider'
@@ -68,3 +64,13 @@ class BrickSetSpider(scrapy.Spider):
                 response.urljoin(next_page),
                 callback=self.parse
             )
+
+class TestResult(unittest.TestCase):
+    
+    def test_status(self):
+        url = 'https://brickset.com/sets/year-2010'
+        response = requests.get(url=url)
+        self.assertEqual(response.status_code, 200)
+
+if __name__ == '__main__':
+    unittest.main()
