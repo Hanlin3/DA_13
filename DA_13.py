@@ -13,34 +13,37 @@ from bs4 import BeautifulSoup
 import unittest
 
 
-class TASK5():
-    def task5_1(self):
+def TASK5():
+    #def task5_1(self):
         # Request the get
-        url = "https://brickset.com/sets/year-2010"
-        r = requests.get(url)
+    url = "https://brickset.com/sets/year-2010"
+    r = requests.get(url)
         #print(r.text)
     
-    def task5_2(self):
+    #def task5_2(self):
         # Display an OK return status (task5.ii
-        print("Status code:")
-        print("\t*",r.status_code)
+    print("Status code:")
+    print("\t*",r.status_code)
         
-    def task5_3(self):
+    #def task5_3(self):
         # Display the Website Hearder (task5.iii
-        h = requests.head(url)
-        print("Header:")
-        print("**********")
-        for x in h.headers:
-            print("\t",x,".",h.headers[x])
-        print("**********")
+    h = requests.head(url)
+    print("Header:")
+    print("**********")
+    for x in h.headers:
+        print("\t",x,".",h.headers[x])
+    print("**********")
     
-    def task5_4(self):
+    #def task5_4(self):
         # Modify the Header user-agent to display "Mobile" (task5.iv
-        headers = {
-            'User-Agent' : 'Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B334b Safari/531.21.10'
-        }
-        r2 = requests.get(url,headers=headers)
-        print(r2.request.headers)
+    headers = {
+        'User-Agent' : 'Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B334b Safari/531.21.10'
+    }
+    r2 = requests.get(url,headers=headers)
+    print(r2.request.headers)
+    
+    
+TASK5()
 
 
 # Our scrapy code from https://www.digitalocean.com/community/tutorials/how-to-crawl-a-web-page-with-scrapy-and-python-3
